@@ -38,19 +38,27 @@
       <li><a href="story-time.html" class="hover:text-accent">Story Time</a></li>
       <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
     </ul>
-    <button onclick="document.documentElement.classList.toggle('dark')" class="bg-accent px-3 py-1 rounded text-sm text-white">Toggle</button>
+    <button id="toggle-mode" class="bg-accent px-3 py-1 rounded text-sm text-white">Dark Mode</button>
   </nav>
 
   <!-- Hero Section with Video Background -->
   <section class="relative w-full h-[90vh] overflow-hidden">
-    <video autoplay muted loop class="absolute w-full h-full object-cover opacity-60">
-      <source src="https://videos.pexels.com/video-files/856107/856107-hd_1280_720_25fps.mp4" type="video/mp4">
+    <video autoplay muted loop class="absolute w-full h-full object-cover">
+      <source src="https://cdn.coverr.co/videos/coverr-aerial-view-of-a-wind-farm-6019/720p.mp4" type="video/mp4">
     </video>
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
       <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">You don’t just need sustainability — you need strategy that scales.</h1>
       <p class="text-xl md:text-2xl mb-6 animate-fade-in delay-150">Let’s build sustainability you can track, prove, and profit from.</p>
       <a href="tools.html" class="bg-white text-primary font-semibold px-6 py-3 rounded shadow hover:bg-accent hover:text-white transition">Explore My Tools</a>
     </div>
+  </section>
+
+  <!-- Featured Images / Banners -->
+  <section class="grid md:grid-cols-3 gap-6 p-8">
+    <img src="https://images.unsplash.com/photo-1581090700227-1e8e5f96d0d5" alt="Climate action" class="rounded-lg shadow-md hover:shadow-xl transition">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Tech meets nature" class="rounded-lg shadow-md hover:shadow-xl transition">
+    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0" alt="Strategy tools" class="rounded-lg shadow-md hover:shadow-xl transition">
   </section>
 
   <!-- Footer -->
@@ -59,7 +67,7 @@
     <p>Email: example@example.com | <a href="https://linkedin.com/in/tejalsungra" class="text-blue-500">LinkedIn</a></p>
   </footer>
 
-  <!-- Animations -->
+  <!-- Animations & Script -->
   <style>
     .animate-fade-in {
       animation: fadeIn 1s ease-out forwards;
@@ -71,5 +79,12 @@
       from { opacity: 0; transform: translateY(20px); }
     }
   </style>
+  <script>
+    const toggleButton = document.getElementById('toggle-mode');
+    toggleButton.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      toggleButton.textContent = document.documentElement.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+    });
+  </script>
 </body>
 </html>
