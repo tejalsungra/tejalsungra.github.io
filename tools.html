@@ -29,11 +29,18 @@
     body {
       -webkit-text-size-adjust: 100%;
     }
+    .tool-icon {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
   </style>
 </head>
 <body class="bg-background dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col">
+  <!-- Navbar -->
   <nav class="flex flex-wrap justify-between items-center px-4 sm:px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
-    <div class="flex items-center justify-between w-full sm:w-auto">
+    <div class="flex items-center gap-4 w-full sm:w-auto">
       <a href="index.html" class="text-xl sm:text-2xl font-bold text-primary dark:text-white">
         Sustain<span class="text-accent">IQ</span>
       </a>
@@ -47,6 +54,7 @@
       <li><a href="story-time.html" class="hover:text-accent">Story Time</a></li>
       <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
     </ul>
+    <button id="toggle-mode-desktop" class="hidden sm:block bg-accent px-3 py-1 rounded text-sm text-white">🌓</button>
   </nav>
 
   <main class="flex-grow">
@@ -57,32 +65,30 @@
 
     <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-6 md:px-12 pb-10">
       <!-- Tool Card -->
-      <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
-        <div class="p-6">
-          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Scope 3 Estimator</h2>
-          <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300">Estimate your indirect emissions with a simple, transparent workflow using latest emission factors.</p>
-          <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline text-sm sm:text-base">Launch Tool →</a>
-        </div>
+      <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300 p-6 flex flex-col items-center text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/2907/2907253.png" alt="Scope 3 Icon" class="tool-icon">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Scope 3 Estimator</h2>
+        <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300">Estimate your indirect emissions with a simple, transparent workflow using latest emission factors.</p>
+        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline text-sm sm:text-base">Launch Tool →</a>
       </div>
 
-      <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
-        <div class="p-6">
-          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Circularity Dashboard</h2>
-          <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300">Visualize product material flows and track circular KPIs to boost resource efficiency.</p>
-          <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline text-sm sm:text-base">Open Dashboard →</a>
-        </div>
+      <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300 p-6 flex flex-col items-center text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/3208/3208707.png" alt="Circularity Icon" class="tool-icon">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Circularity Dashboard</h2>
+        <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300">Visualize product material flows and track circular KPIs to boost resource efficiency.</p>
+        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline text-sm sm:text-base">Open Dashboard →</a>
       </div>
 
-      <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
-        <div class="p-6">
-          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">CSRD Navigator</h2>
-          <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300">Simplify your EU Corporate Sustainability Reporting Directive journey with step-by-step guidance.</p>
-          <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline text-sm sm:text-base">Start Navigating →</a>
-        </div>
+      <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300 p-6 flex flex-col items-center text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/3262/3262756.png" alt="CSRD Icon" class="tool-icon">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">CSRD Navigator</h2>
+        <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300">Simplify your EU Corporate Sustainability Reporting Directive journey with step-by-step guidance.</p>
+        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline text-sm sm:text-base">Start Navigating →</a>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="bg-gray-100 dark:bg-gray-900 text-center py-6 text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-auto">
     <div class="flex flex-col items-center gap-2">
       <p>&copy; 2025 SustainIQ &mdash; All rights reserved.</p>
@@ -91,9 +97,11 @@
   </footer>
 
   <script>
-    document.getElementById('toggle-mode').addEventListener('click', () => {
+    function toggleDarkMode() {
       document.documentElement.classList.toggle('dark');
-    });
+    }
+    document.getElementById('toggle-mode').addEventListener('click', toggleDarkMode);
+    document.getElementById('toggle-mode-desktop').addEventListener('click', toggleDarkMode);
   </script>
 </body>
 </html>
