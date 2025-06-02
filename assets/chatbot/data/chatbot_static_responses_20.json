@@ -1,0 +1,155 @@
+[
+  {
+    "keywords": [
+      "carbon emissions",
+      "ghg",
+      "greenhouse gases"
+    ],
+    "response": "Carbon emissions refer to the release of greenhouse gases, primarily carbon dioxide (CO\u2082), into the atmosphere from sources like fossil fuel combustion, deforestation, and industrial activity. Reducing these is essential to mitigate climate change."
+  },
+  {
+    "keywords": [
+      "scope 1",
+      "direct emissions"
+    ],
+    "response": "Scope 1 emissions are direct greenhouse gas emissions from owned or controlled sources\u2014such as emissions from fuel combustion in company vehicles or boilers."
+  },
+  {
+    "keywords": [
+      "scope 2",
+      "indirect emissions",
+      "electricity"
+    ],
+    "response": "Scope 2 emissions are indirect GHG emissions from the generation of purchased electricity, steam, heating, and cooling consumed by the reporting company."
+  },
+  {
+    "keywords": [
+      "scope 3",
+      "value chain",
+      "indirect emissions"
+    ],
+    "response": "Scope 3 emissions are all other indirect emissions in a company\u2019s value chain, including business travel, procurement, waste, and use of sold products. They typically form the largest share of a company's footprint."
+  },
+  {
+    "keywords": [
+      "life cycle assessment",
+      "lca",
+      "cradle to grave"
+    ],
+    "response": "Life Cycle Assessment (LCA) is a methodology for assessing the environmental impacts associated with all stages of a product's life from cradle to grave: from raw material extraction through materials processing, manufacture, distribution, use, repair, and disposal."
+  },
+  {
+    "keywords": [
+      "circular economy",
+      "reuse",
+      "recycle"
+    ],
+    "response": "A circular economy keeps materials, products, and resources in use as long as possible through design, reuse, remanufacturing, and recycling, minimizing waste and reducing environmental impact."
+  },
+  {
+    "keywords": [
+      "linear economy",
+      "take make dispose"
+    ],
+    "response": "The linear economy follows a 'take-make-dispose' model that extracts resources, creates products, and discards them after use. It results in significant waste and resource depletion."
+  },
+  {
+    "keywords": [
+      "sustainability strategy",
+      "green plan",
+      "esg strategy"
+    ],
+    "response": "A sustainability strategy outlines how a company integrates environmental, social, and governance (ESG) principles into its business model to drive impact, reduce risks, and create long-term value."
+  },
+  {
+    "keywords": [
+      "materiality",
+      "material topics",
+      "double materiality"
+    ],
+    "response": "Materiality refers to identifying the most significant ESG issues for a company and its stakeholders. Double materiality considers both financial impacts and the company\u2019s impact on society and the environment."
+  },
+  {
+    "keywords": [
+      "stakeholder",
+      "stakeholder engagement",
+      "esg stakeholders"
+    ],
+    "response": "Stakeholder engagement involves identifying and communicating with individuals or groups affected by or influencing a company\u2019s sustainability performance\u2014such as customers, employees, regulators, investors, and communities."
+  },
+  {
+    "keywords": [
+      "esg",
+      "environmental social governance"
+    ],
+    "response": "ESG stands for Environmental, Social, and Governance. It represents three key factors used to measure a company's sustainability and ethical impact. ESG data is increasingly used by investors to assess risk and performance."
+  },
+  {
+    "keywords": [
+      "sdgs",
+      "sustainable development goals",
+      "un goals"
+    ],
+    "response": "The Sustainable Development Goals (SDGs) are 17 global goals adopted by the United Nations to end poverty, protect the planet, and ensure prosperity for all by 2030."
+  },
+  {
+    "keywords": [
+      "csrd",
+      "eu sustainability reporting"
+    ],
+    "response": "The Corporate Sustainability Reporting Directive (CSRD) is an EU regulation requiring companies to disclose sustainability-related information, including environmental and social risks, impacts, and governance practices."
+  },
+  {
+    "keywords": [
+      "greenwashing",
+      "misleading sustainability claims"
+    ],
+    "response": "Greenwashing is when a company gives a false impression or misleading information about how environmentally friendly its products or practices are."
+  },
+  {
+    "keywords": [
+      "ghg protocol",
+      "emission accounting standard"
+    ],
+    "response": "The GHG Protocol provides standards and guidance for companies and governments to measure and manage greenhouse gas emissions across Scopes 1, 2, and 3."
+  },
+  {
+    "keywords": [
+      "carbon neutrality",
+      "net zero"
+    ],
+    "response": "Carbon neutrality means achieving net-zero carbon dioxide emissions by balancing emissions with removal or offsets. Net zero extends to all greenhouse gases and is a long-term climate goal."
+  },
+  {
+    "keywords": [
+      "carbon offset",
+      "credits",
+      "compensation"
+    ],
+    "response": "Carbon offsets allow companies to compensate for their emissions by funding equivalent carbon savings projects, such as reforestation or renewable energy. Quality and verification are key challenges."
+  },
+  {
+    "keywords": [
+      "climate risk",
+      "transition risk",
+      "physical risk"
+    ],
+    "response": "Climate risks include physical risks (e.g., floods, wildfires) and transition risks (e.g., policy, market shifts) that may affect businesses financially and operationally."
+  },
+  {
+    "keywords": [
+      "sustainable finance",
+      "green bonds",
+      "esg investing"
+    ],
+    "response": "Sustainable finance refers to financial services integrating ESG criteria into investment decisions. Instruments like green bonds fund environmentally beneficial projects."
+  },
+  {
+    "keywords": [
+      "circular design",
+      "product design",
+      "sustainable materials"
+    ],
+    "response": "Circular design focuses on creating products that are easy to reuse, refurbish, recycle, or biodegrade\u2014minimizing waste and environmental impact from the outset."
+  }
+]
