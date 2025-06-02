@@ -1,0 +1,17 @@
+[
+  {
+    "category": "carbon_emissions",
+    "questions": ["what are carbon emissions", "how to reduce carbon emissions"],
+    "answer": "Carbon emissions are greenhouse gases released by burning fossil fuels. Reduce them by using renewable energy, minimizing transportation emissions, and improving efficiency."
+  },
+  {
+    "category": "scope_3",
+    "questions": ["what is scope 3", "scope 3 emissions meaning"],
+    "answer": "Scope 3 emissions are indirect emissions in your value chain, like purchased goods, waste disposal, and customer usage."
+  },
+  {
+    "category": "circular_economy",
+    "questions": ["what is circular economy", "why circular economy important"],
+    "answer": "A circular economy keeps products and materials in use, reducing waste and promoting sustainability through reuse, recycling, and regeneration."
+  }
+]
