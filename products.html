@@ -26,30 +26,30 @@
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-background dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans">
+<body class="bg-background dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col">
   <!-- Navbar -->
-  <nav class="flex flex-wrap justify-between items-center px-4 py-4 bg-white dark:bg-gray-800 shadow-md">
+  <nav class="bg-white dark:bg-gray-800 shadow-md px-4 py-4 flex items-center justify-between">
     <a href="index.html" class="text-xl sm:text-2xl font-bold text-primary dark:text-white">
       Sustain<span class="text-accent">IQ</span>
     </a>
     <div class="flex items-center gap-4">
-      <button id="mobile-menu-button" class="sm:hidden text-gray-700 dark:text-gray-300 focus:outline-none">☰</button>
       <button id="toggle-mode" class="bg-accent px-3 py-1 rounded text-sm text-white">🌓</button>
+      <button id="mobile-menu-button" class="sm:hidden text-gray-700 dark:text-gray-300 focus:outline-none">☰</button>
     </div>
-    <ul id="mobile-menu" class="hidden sm:flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-5 text-sm font-medium mt-3 sm:mt-0 w-full sm:w-auto">
-      <li><a href="index.html" class="hover:text-accent">Home</a></li>
-      <li><a href="tools.html" class="hover:text-accent">Tools</a></li>
-      <li><a href="products.html" class="hover:text-accent">Products</a></li>
-      <li><a href="experience.html" class="hover:text-accent">Experience</a></li>
-      <li><a href="story-time.html" class="hover:text-accent">Story Time</a></li>
-      <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
-    </ul>
   </nav>
+  <ul id="mobile-menu" class="hidden sm:flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-5 text-sm font-medium bg-white dark:bg-gray-800 px-4 py-2 sm:px-0 sm:py-0 text-center w-full">
+    <li><a href="index.html" class="block py-2 hover:text-accent">Home</a></li>
+    <li><a href="tools.html" class="block py-2 hover:text-accent">Tools</a></li>
+    <li><a href="products.html" class="block py-2 hover:text-accent">Products</a></li>
+    <li><a href="experience.html" class="block py-2 hover:text-accent">Experience</a></li>
+    <li><a href="story-time.html" class="block py-2 hover:text-accent">Story Time</a></li>
+    <li><a href="contact.html" class="block py-2 hover:text-accent">Contact</a></li>
+  </ul>
 
   <!-- Product Showcase -->
-  <section class="px-4 sm:px-6 py-16 md:py-24 bg-secondary dark:bg-gray-800">
+  <section class="px-4 sm:px-6 py-16 md:py-24 bg-secondary dark:bg-gray-800 flex-grow">
     <div class="max-w-6xl mx-auto text-center">
-      <h1 class="text-3xl sm:text-4xl font-bold mb-10">Explore Our Digital Sustainability Products</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-10 text-primary dark:text-white">Explore Our Digital Sustainability Products</h1>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- SustainBot Product Card -->
@@ -64,24 +64,25 @@
           <a href="tools.html" class="inline-block bg-accent text-white px-4 py-2 rounded hover:bg-primary transition">Try Free Beta</a>
         </div>
 
-        <!-- Future Product Placeholder -->
-        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-xl p-6 text-left opacity-60">
-          <h2 class="text-xl font-bold text-primary dark:text-white mb-2">📊 EcoImpact Dashboard</h2>
-          <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">Coming soon: Visualize real-time sustainability KPIs using AI-integrated lifecycle data.</p>
-          <span class="inline-block text-xs text-accent">Launching Q4 2025</span>
-        </div>
-
+        <!-- Circular Mapper Product Card -->
         <div class="bg-white dark:bg-gray-900 shadow-lg rounded-xl p-6 text-left opacity-60">
           <h2 class="text-xl font-bold text-primary dark:text-white mb-2">📦 Circular Supply Mapper</h2>
           <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">Trace your materials and packaging lifecycle through intelligent mapping systems.</p>
           <span class="inline-block text-xs text-accent">Launching Q1 2026</span>
+        </div>
+
+        <!-- Placeholder for future non-redundant product -->
+        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-xl p-6 text-left opacity-60">
+          <h2 class="text-xl font-bold text-primary dark:text-white mb-2">🌿 Carbon Strategy Toolkit</h2>
+          <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">Plan, reduce, and visualize carbon goals with science-based methodologies and scenario planning.</p>
+          <span class="inline-block text-xs text-accent">Coming Soon</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 dark:bg-gray-900 text-center py-6 text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-12">
+  <footer class="bg-gray-100 dark:bg-gray-900 text-center py-6 text-xs sm:text-sm text-gray-600 dark:text-gray-300">
     <div class="flex flex-col items-center gap-2">
       <p>&copy; 2025 SustainIQ &mdash; All rights reserved.</p>
       <p>Email: example@example.com | <a href="https://linkedin.com/in/tejalsungra" class="text-blue-500">LinkedIn</a></p>
