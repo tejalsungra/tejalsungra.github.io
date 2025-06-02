@@ -2,7 +2,7 @@
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Tools | SustainIQ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -13,7 +13,7 @@
           colors: {
             primary: '#004643',
             secondary: '#FAF4F0',
-            accent: '#F9BC60',
+            accent: '#00C281',
             background: '#FFFFFF',
             darkbg: '#1F1F1F',
           },
@@ -22,18 +22,18 @@
     }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      -webkit-text-size-adjust: 100%;
+    }
+  </style>
 </head>
 <body class="bg-background dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans">
-  <nav class="flex justify-between items-center px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
-    <div class="text-2xl font-bold text-white dark:text-white">
-      Sustain<span class="text-white">I</span><span class="text-green-500 relative inline-block">
-        <svg class="w-6 h-6 inline-block" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="5" fill="none"/>
-        </svg>
-        <span class="absolute top-0 left-0 text-green-500 font-bold text-xl">Q</span>
-      </span>
-    </div>
-    <ul class="flex gap-6 text-sm font-medium">
+  <nav class="flex flex-wrap justify-between items-center px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
+    <a href="index.html" class="text-2xl font-bold text-primary dark:text-white">
+      Sustain<span class="text-green-500">IQ</span>
+    </a>
+    <ul class="flex flex-wrap gap-4 md:gap-6 text-sm font-medium mt-2 md:mt-0">
       <li><a href="index.html" class="hover:text-accent">Home</a></li>
       <li><a href="tools.html" class="hover:text-accent">Tools</a></li>
       <li><a href="products.html" class="hover:text-accent">Products</a></li>
@@ -44,11 +44,11 @@
   </nav>
 
   <header class="text-center py-12 px-4">
-    <h1 class="text-4xl font-bold mb-4">Explore My Sustainability Tools</h1>
-    <p class="text-lg text-gray-600 dark:text-gray-300">Built for impact. Designed for action.</p>
+    <h1 class="text-4xl font-bold text-primary dark:text-green-400 mb-4">Explore My Sustainability Tools</h1>
+    <p class="text-lg text-gray-700 dark:text-gray-300">Built for impact. Designed for action.</p>
   </header>
 
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-8 p-6 md:p-12">
+  <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-6 md:p-12">
     <!-- Tool Card -->
     <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
       <div class="p-6">
