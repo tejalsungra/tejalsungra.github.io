@@ -1,17 +1,85 @@
 <!DOCTYPE html>
-<html><head><title>Tools</title><link rel="stylesheet" href="assets/css/style.css"><script src="https://cdn.tailwindcss.com"></script><script src="assets/js/toggle.js" defer></script></head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-<nav class="flex justify-between items-center p-4 bg-gray-100 dark:bg-gray-800">
-  <div class="text-lg font-bold text-gray-900 dark:text-white">Tejal Sustainability Studio</div>
-  <ul class="flex space-x-4 text-gray-800 dark:text-gray-200">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="tools.html">Tools</a></li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="experience.html">Experience</a></li>
-    <li><a href="story-time.html">Story Time</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <button onclick="toggleTheme()" class="text-sm text-blue-600 dark:text-blue-300">Toggle Mode</button>
-</nav>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools | SustainIQ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#004643',
+            secondary: '#FAF4F0',
+            accent: '#F9BC60',
+            background: '#FFFFFF',
+            darkbg: '#1F1F1F',
+          },
+        },
+      },
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-background dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans">
+  <nav class="flex justify-between items-center px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
+    <div class="text-2xl font-bold text-white dark:text-white">
+      Sustain<span class="text-white">I</span><span class="text-green-500 relative inline-block">
+        <svg class="w-6 h-6 inline-block" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="5" fill="none"/>
+        </svg>
+        <span class="absolute top-0 left-0 text-green-500 font-bold text-xl">Q</span>
+      </span>
+    </div>
+    <ul class="flex gap-6 text-sm font-medium">
+      <li><a href="index.html" class="hover:text-accent">Home</a></li>
+      <li><a href="tools.html" class="hover:text-accent">Tools</a></li>
+      <li><a href="products.html" class="hover:text-accent">Products</a></li>
+      <li><a href="experience.html" class="hover:text-accent">Experience</a></li>
+      <li><a href="story-time.html" class="hover:text-accent">Story Time</a></li>
+      <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
+    </ul>
+  </nav>
 
-<main class="p-8"><h1 class="text-3xl font-bold">Tools</h1><p>Scope 3, Circularity, CSRD Navigator</p></main></body></html>
+  <header class="text-center py-12 px-4">
+    <h1 class="text-4xl font-bold mb-4">Explore My Sustainability Tools</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-300">Built for impact. Designed for action.</p>
+  </header>
+
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-8 p-6 md:p-12">
+    <!-- Tool Card -->
+    <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
+      <div class="p-6">
+        <h2 class="text-xl font-bold text-primary mb-2">Scope 3 Estimator</h2>
+        <p class="text-gray-700 dark:text-gray-300">Estimate your indirect emissions with a simple, transparent workflow using latest emission factors.</p>
+        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline">Launch Tool →</a>
+      </div>
+    </div>
+
+    <!-- Tool Card -->
+    <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
+      <div class="p-6">
+        <h2 class="text-xl font-bold text-primary mb-2">Circularity Dashboard</h2>
+        <p class="text-gray-700 dark:text-gray-300">Visualize product material flows and track circular KPIs to boost resource efficiency.</p>
+        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline">Open Dashboard →</a>
+      </div>
+    </div>
+
+    <!-- Tool Card -->
+    <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
+      <div class="p-6">
+        <h2 class="text-xl font-bold text-primary mb-2">CSRD Navigator</h2>
+        <p class="text-gray-700 dark:text-gray-300">Simplify your EU Corporate Sustainability Reporting Directive journey with step-by-step guidance.</p>
+        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline">Start Navigating →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-100 dark:bg-gray-900 text-center py-6 text-sm text-gray-600 dark:text-gray-300 mt-12">
+    <p>&copy; 2025 SustainIQ &mdash; All rights reserved.</p>
+    <p>Email: example@example.com | <a href="https://linkedin.com/in/tejalsungra" class="text-blue-500">LinkedIn</a></p>
+  </footer>
+</body>
+</html>
