@@ -1,55 +1,38 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const widget = document.getElementById("sustainbot-widget");
-
+document.addEventListener('DOMContentLoaded', () => {
+  const widget = document.getElementById('sustainbot-widget');
   widget.innerHTML = `
-    <button id="chat-button">💬 Chat</button>
-    <div id="chat-box">
-      <div id="chat-header">SustainBot</div>
-      <div id="chat-messages"></div>
-      <input type="text" id="chat-input" placeholder="Ask me anything...">
+    <div id="chat-toggle" style="position: fixed; bottom: 20px; right: 20px; background: #007554; color: white; padding: 12px 16px; border-radius: 50px; cursor: pointer; z-index: 9999;">
+      💬
+    </div>
+    <div id="chatbox" style="display:none; position:fixed; bottom:80px; right:20px; width:320px; max-height:420px; background:white; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.25); z-index: 9999; overflow: hidden;">
+      <div style="background:#004643; color:white; padding:10px; font-weight:bold;">SustainBot</div>
+      <div id="chat-content" style="padding:10px; height:260px; overflow-y:auto; font-size:14px; color:#333;"></div>
+      <div style="padding:10px; display:flex; gap:5px;">
+        <input type="text" id="chat-input" style="flex:1; padding:6px; border:1px solid #ccc; border-radius:4px;" placeholder="Ask something..." />
+        <button id="send-btn" style="padding:6px 10px; background:#007554; color:white; border:none; border-radius:4px;">Send</button>
+      </div>
     </div>
   `;
 
-  const chatButton = document.getElementById("chat-button");
-  const chatBox = document.getElementById("chat-box");
-  const chatInput = document.getElementById("chat-input");
-  const chatMessages = document.getElementById("chat-messages");
+  const toggle = document.getElementById('chat-toggle');
+  const chatbox = document.getElementById('chatbox');
+  const input = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('send-btn');
+  const content = document.getElementById('chat-content');
 
-  chatButton.addEventListener("click", () => {
-    chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+  toggle.addEventListener('click', () => {
+    chatbox.style.display = chatbox.style.display === 'none' ? 'block' : 'none';
   });
 
-  chatInput.addEventListener("keypress", function (e) {
-    if (e.key === "Enter" && chatInput.value.trim() !== "") {
-      const userMessage = chatInput.value;
-      appendMessage("user", userMessage);
-      respond(userMessage.toLowerCase());
-      chatInput.value = "";
+  sendBtn.addEventListener('click', () => {
+    const msg = input.value.trim();
+    if (msg) {
+      content.innerHTML += `<div><strong>You:</strong> ${msg}</div>`;
+      content.innerHTML += `<div><strong>Bot:</strong> This is a demo response.</div>`;
+      const pop = new Audio('https://www.myinstants.com/media/sounds/pop.mp3');
+      pop.play();
+      input.value = '';
+      content.scrollTop = content.scrollHeight;
     }
   });
-
-  function appendMessage(type, text) {
-    const bubble = document.createElement("div");
-    bubble.className = `chat-bubble ${type}`;
-    bubble.innerText = text;
-    chatMessages.appendChild(bubble);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-
-  function respond(input) {
-    let reply = "Sorry, I’m still learning. Please ask a different question.";
-
-    if (input.includes("scope 3")) {
-      reply = "The Scope 3 Estimator helps you estimate indirect emissions using category-specific logic.";
-    } else if (input.includes("csrd")) {
-      reply = "The CSRD Navigator guides you through EU reporting requirements step-by-step.";
-    } else if (input.includes("circular")) {
-      reply = "The Circularity Dashboard helps you track material flows and circular KPIs.";
-    } else if (input.includes("contact")) {
-      reply = "You can reach us at example@example.com or use the Contact page.";
-    }
-
-    setTimeout(() => appendMessage("bot", reply), 600);
-  }
 });
-
