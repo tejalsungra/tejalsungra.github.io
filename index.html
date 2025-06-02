@@ -25,11 +25,28 @@
     }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+      opacity: 0;
+    }
+    .delay-150 { animation-delay: 0.15s; }
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
+    }
+  </style>
 </head>
 <body class="bg-background dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans">
   <!-- Navbar -->
   <nav class="flex justify-between items-center px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
-    <div class="text-xl font-bold text-primary dark:text-white">Sustain<span class="text-accent">Q</span></div>
+    <div class="text-2xl font-bold text-primary dark:text-white">
+      Sustain<span class="text-accent relative inline-block">
+        <svg class="w-5 h-5 inline-block -mt-1" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 17c-3.87 0-7-3.13-7-7 0-.29.02-.57.05-.85l4.15 4.15v.35c0 .83.67 1.5 1.5 1.5.45 0 .85-.19 1.13-.49l1.31 1.31c-.79.34-1.65.53-2.64.53zm5.95-3.15l-4.15-4.15V11c0-.83-.67-1.5-1.5-1.5-.45 0-.85.19-1.13.49L9.86 8.68c.79-.34 1.65-.53 2.64-.53 3.87 0 7 3.13 7 7 0 .29-.02.57-.05.85z"/>
+        </svg>
+      </span>I
+    </div>
     <ul class="flex gap-6 text-sm font-medium">
       <li><a href="index.html" class="hover:text-accent">Home</a></li>
       <li><a href="tools.html" class="hover:text-accent">Tools</a></li>
@@ -43,11 +60,11 @@
 
   <!-- Hero Section with Video Background -->
   <section class="relative w-full h-[90vh] overflow-hidden">
-    <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
+    <video autoplay muted loop playsinline class="absolute w-full h-full object-cover z-0">
       <source src="https://cdn.coverr.co/videos/coverr-wind-turbines-on-green-field-5036/720p.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
       <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">You don’t just need sustainability — you need strategy that scales.</h1>
       <p class="text-xl md:text-2xl mb-6 animate-fade-in delay-150">Let’s build sustainability you can track, prove, and profit from.</p>
@@ -68,18 +85,6 @@
     <p>Email: example@example.com | <a href="https://linkedin.com/in/tejalsungra" class="text-blue-500">LinkedIn</a></p>
   </footer>
 
-  <!-- Animations & Script -->
-  <style>
-    .animate-fade-in {
-      animation: fadeIn 1s ease-out forwards;
-      opacity: 0;
-    }
-    .delay-150 { animation-delay: 0.15s; }
-    @keyframes fadeIn {
-      to { opacity: 1; transform: translateY(0); }
-      from { opacity: 0; transform: translateY(20px); }
-    }
-  </style>
   <script>
     const toggleButton = document.getElementById('toggle-mode');
     toggleButton.addEventListener('click', () => {
