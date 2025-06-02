@@ -2,17 +2,14 @@
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SustainIQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tools | SustainIQ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          },
           colors: {
             primary: '#004643',
             secondary: '#FAF4F0',
@@ -26,36 +23,17 @@
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    .animate-fade-in {
-      animation: fadeIn 1s ease-out forwards;
-      opacity: 0;
-    }
-    .delay-150 { animation-delay: 0.15s; }
-    @keyframes fadeIn {
-      to { opacity: 1; transform: translateY(0); }
-      from { opacity: 0; transform: translateY(20px); }
-    }
-    @keyframes slowZoom {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.2); }
-    }
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease-out;
-    }
-    .accordion-open .accordion-content {
-      max-height: 500px;
+    body {
+      -webkit-text-size-adjust: 100%;
     }
   </style>
 </head>
 <body class="bg-background dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans">
-  <!-- Navbar -->
-  <nav class="flex justify-between items-center px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
-    <a href="index.html" class="text-2xl font-bold text-primary dark:text-white">
+  <nav class="flex flex-wrap justify-between items-center px-4 sm:px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
+    <a href="index.html" class="text-xl sm:text-2xl font-bold text-primary dark:text-white">
       Sustain<span class="text-green-500">IQ</span>
     </a>
-    <ul class="flex gap-6 text-sm font-medium">
+    <ul class="flex flex-wrap justify-center gap-3 sm:gap-5 text-sm font-medium mt-3 sm:mt-0">
       <li><a href="index.html" class="hover:text-accent">Home</a></li>
       <li><a href="tools.html" class="hover:text-accent">Tools</a></li>
       <li><a href="products.html" class="hover:text-accent">Products</a></li>
@@ -63,75 +41,45 @@
       <li><a href="story-time.html" class="hover:text-accent">Story Time</a></li>
       <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
     </ul>
-    <button id="toggle-mode" class="bg-accent px-3 py-1 rounded text-sm text-white">Dark Mode</button>
   </nav>
 
-  <!-- Hero Section with Video Background -->
-  <section class="relative w-full h-[90vh] overflow-hidden">
-    <video autoplay muted loop playsinline class="absolute w-full h-full object-cover z-0" style="animation: slowZoom 90s ease-in-out infinite alternate;">
-      <source src="hero.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">You don’t just need sustainability — you need strategy that scales.</h1>
-      <p class="text-xl md:text-2xl mb-6 animate-fade-in delay-150">Let’s build sustainability you can track, prove, and profit from.</p>
-      <a href="tools.html" class="bg-white text-primary font-semibold px-6 py-3 rounded shadow hover:bg-accent hover:text-white transition">Explore My Tools</a>
-    </div>
-  </section>
+  <header class="text-center py-10 px-4 sm:px-6">
+    <h1 class="text-3xl sm:text-4xl font-bold text-primary dark:text-green-400 mb-4">Explore My Sustainability Tools</h1>
+    <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300">Built for impact. Designed for action.</p>
+  </header>
 
-  <!-- About Section -->
-  <section class="px-6 py-12 md:py-20 bg-secondary dark:bg-gray-800">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8">About SustainIQ</h2>
-      <div class="text-left space-y-4">
-        <div class="border-b border-gray-300 dark:border-gray-700 py-2 cursor-pointer accordion">
-          <h3 class="text-xl font-semibold">🔍 What does SustainIQ do?</h3>
-          <div class="accordion-content text-gray-700 dark:text-gray-300 pt-2">
-            SustainIQ develops cutting-edge sustainability tools and digital solutions that enable organizations to measure, monitor, and improve their environmental and social performance through real-time insights and intelligent frameworks.
-          </div>
-        </div>
-        <div class="border-b border-gray-300 dark:border-gray-700 py-2 cursor-pointer accordion">
-          <h3 class="text-xl font-semibold">🧠 Who is behind this?</h3>
-          <div class="accordion-content text-gray-700 dark:text-gray-300 pt-2">
-            This platform was founded by a sustainability strategist with a background in data science and circular systems, passionate about combining innovation, research, and automation for lasting climate impact.
-          </div>
-        </div>
-        <div class="border-b border-gray-300 dark:border-gray-700 py-2 cursor-pointer accordion">
-          <h3 class="text-xl font-semibold">📦 Can I use these tools?</h3>
-          <div class="accordion-content text-gray-700 dark:text-gray-300 pt-2">
-            Absolutely. Many of the tools are in beta and open for community testing, while others will be launched as shareable templates or subscription-based services with full documentation.
-          </div>
-        </div>
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-6 md:px-12 pb-10">
+    <!-- Tool Card -->
+    <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
+      <div class="p-6">
+        <h2 class="text-lg sm:text-xl font-bold text-primary mb-2">Scope 3 Estimator</h2>
+        <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300">Estimate your indirect emissions with a simple, transparent workflow using latest emission factors.</p>
+        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline text-sm sm:text-base">Launch Tool →</a>
+      </div>
+    </div>
+
+    <!-- Tool Card -->
+    <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
+      <div class="p-6">
+        <h2 class="text-lg sm:text-xl font-bold text-primary mb-2">Circularity Dashboard</h2>
+        <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300">Visualize product material flows and track circular KPIs to boost resource efficiency.</p>
+        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline text-sm sm:text-base">Open Dashboard →</a>
+      </div>
+    </div>
+
+    <!-- Tool Card -->
+    <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
+      <div class="p-6">
+        <h2 class="text-lg sm:text-xl font-bold text-primary mb-2">CSRD Navigator</h2>
+        <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300">Simplify your EU Corporate Sustainability Reporting Directive journey with step-by-step guidance.</p>
+        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline text-sm sm:text-base">Start Navigating →</a>
       </div>
     </div>
   </section>
 
-  <!-- Featured Images / Banners -->
-  <section class="grid md:grid-cols-3 gap-6 p-8">
-    <img src="https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Climate action" class="rounded-lg shadow-md hover:shadow-xl transition">
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Tech meets nature" class="rounded-lg shadow-md hover:shadow-xl transition">
-    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="Strategy tools" class="rounded-lg shadow-md hover:shadow-xl transition">
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-100 dark:bg-gray-900 text-center py-6 text-sm text-gray-600 dark:text-gray-300 mt-12">
+  <footer class="bg-gray-100 dark:bg-gray-900 text-center py-6 text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-12">
     <p>&copy; 2025 SustainIQ &mdash; All rights reserved.</p>
     <p>Email: example@example.com | <a href="https://linkedin.com/in/tejalsungra" class="text-blue-500">LinkedIn</a></p>
   </footer>
-
-  <script>
-    const toggleButton = document.getElementById('toggle-mode');
-    toggleButton.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      toggleButton.textContent = document.documentElement.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
-    });
-
-    document.querySelectorAll('.accordion').forEach(item => {
-      item.addEventListener('click', () => {
-        item.classList.toggle('accordion-open');
-      });
-    });
-  </script>
 </body>
 </html>
