@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> My Sustainability Studio</title>
+  <title>SustainIQ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -15,10 +15,10 @@
           },
           colors: {
             primary: '#004643',
-            secondary: '#E1E1E1',
-            accent: '#f9bc60',
-            background: '#f5f5f5',
-            darkbg: '#1a1a1a',
+            secondary: '#FAF4F0',
+            accent: '#F9BC60',
+            background: '#FFFFFF',
+            darkbg: '#1F1F1F',
           },
         },
       },
@@ -29,7 +29,7 @@
 <body class="bg-background dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans">
   <!-- Navbar -->
   <nav class="flex justify-between items-center px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
-    <div class="text-xl font-bold text-primary dark:text-white">My Sustainability Studio</div>
+    <div class="text-xl font-bold text-primary dark:text-white">SustainIQ</div>
     <ul class="flex gap-6 text-sm font-medium">
       <li><a href="index.html" class="hover:text-accent">Home</a></li>
       <li><a href="tools.html" class="hover:text-accent">Tools</a></li>
@@ -41,16 +41,21 @@
     <button onclick="document.documentElement.classList.toggle('dark')" class="bg-accent px-3 py-1 rounded text-sm text-white">Toggle</button>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="text-center py-24 px-4 bg-gradient-to-br from-primary to-green-700 text-white">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">You don’t just need sustainability — you need strategy that scales.</h1>
-    <p class="text-xl md:text-2xl mb-6 animate-fade-in delay-150">Let’s build sustainability you can track, prove, and profit from.</p>
-    <a href="tools.html" class="bg-white text-primary font-semibold px-6 py-3 rounded shadow hover:bg-accent hover:text-white transition">Explore My Tools</a>
+  <!-- Hero Section with Video Background -->
+  <section class="relative w-full h-[90vh] overflow-hidden">
+    <video autoplay muted loop class="absolute w-full h-full object-cover opacity-60">
+      <source src="https://videos.pexels.com/video-files/856107/856107-hd_1280_720_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">You don’t just need sustainability — you need strategy that scales.</h1>
+      <p class="text-xl md:text-2xl mb-6 animate-fade-in delay-150">Let’s build sustainability you can track, prove, and profit from.</p>
+      <a href="tools.html" class="bg-white text-primary font-semibold px-6 py-3 rounded shadow hover:bg-accent hover:text-white transition">Explore My Tools</a>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-gray-100 dark:bg-gray-900 text-center py-6 text-sm text-gray-600 dark:text-gray-300 mt-12">
-    <p>&copy; 2025 Tejal Sustainability Studio &mdash; All rights reserved.</p>
+    <p>&copy; 2025 SustainIQ &mdash; All rights reserved.</p>
     <p>Email: example@example.com | <a href="https://linkedin.com/in/tejalsungra" class="text-blue-500">LinkedIn</a></p>
   </footer>
 
