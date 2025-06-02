@@ -39,26 +39,15 @@
       0% { transform: scale(1); }
       100% { transform: scale(1.2); }
     }
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease-out;
-    }
-    .accordion-open .accordion-content {
-      max-height: 500px;
-    }
   </style>
 </head>
 <body class="bg-background dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans">
   <!-- Navbar -->
   <nav class="flex flex-wrap justify-between items-center px-4 py-4 bg-white dark:bg-gray-800 shadow-md">
-    <div class="flex justify-between w-full sm:w-auto">
-      <a href="index.html" class="text-xl sm:text-2xl font-bold text-primary dark:text-white">
-        Sustain<span class="text-accent">IQ</span>
-      </a>
-      <button id="toggle-mode" class="sm:hidden bg-accent px-3 py-1 rounded text-sm text-white">🌓</button>
-    </div>
-    <ul class="hidden sm:flex flex-wrap justify-center gap-3 sm:gap-5 text-sm font-medium mt-3 sm:mt-0 w-full sm:w-auto">
+    <a href="index.html" class="text-xl sm:text-2xl font-bold text-primary dark:text-white">
+      Sustain<span class="text-accent">IQ</span>
+    </a>
+    <ul class="hidden sm:flex flex-wrap justify-center gap-3 sm:gap-5 text-sm font-medium mt-3 sm:mt-0">
       <li><a href="index.html" class="hover:text-accent">Home</a></li>
       <li><a href="tools.html" class="hover:text-accent">Tools</a></li>
       <li><a href="products.html" class="hover:text-accent">Products</a></li>
@@ -66,6 +55,7 @@
       <li><a href="story-time.html" class="hover:text-accent">Story Time</a></li>
       <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
     </ul>
+    <button id="toggle-mode" class="hidden sm:block bg-accent px-3 py-1 rounded text-sm text-white">🌓</button>
   </nav>
 
   <!-- Hero Section with Video Background -->
@@ -86,28 +76,15 @@
   <section class="px-4 sm:px-6 py-12 md:py-20 bg-secondary dark:bg-gray-800">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-2xl sm:text-3xl font-bold mb-8">About SustainIQ</h2>
-      <div class="text-left space-y-4">
-        <div class="border-b border-gray-300 dark:border-gray-700 py-2 cursor-pointer accordion flex justify-between items-center">
-          <h3 class="text-lg sm:text-xl font-semibold">🔍 What does SustainIQ do?</h3>
-          <span class="text-xl">▾</span>
-          <div class="accordion-content text-gray-700 dark:text-gray-300 pt-2 w-full">
-            SustainIQ develops cutting-edge sustainability tools and digital solutions that enable organizations to measure, monitor, and improve their environmental and social performance through real-time insights and intelligent frameworks.
-          </div>
-        </div>
-        <div class="border-b border-gray-300 dark:border-gray-700 py-2 cursor-pointer accordion flex justify-between items-center">
-          <h3 class="text-lg sm:text-xl font-semibold">🧠 Who is behind this?</h3>
-          <span class="text-xl">▾</span>
-          <div class="accordion-content text-gray-700 dark:text-gray-300 pt-2 w-full">
-            This platform was founded by a sustainability strategist with a background in data science and circular systems, passionate about combining innovation, research, and automation for lasting climate impact.
-          </div>
-        </div>
-        <div class="border-b border-gray-300 dark:border-gray-700 py-2 cursor-pointer accordion flex justify-between items-center">
-          <h3 class="text-lg sm:text-xl font-semibold">📦 Can I use these tools?</h3>
-          <span class="text-xl">▾</span>
-          <div class="accordion-content text-gray-700 dark:text-gray-300 pt-2 w-full">
-            Absolutely. Many of the tools are in beta and open for community testing, while others will be launched as shareable templates or subscription-based services with full documentation.
-          </div>
-        </div>
+      <div class="text-left space-y-6 text-gray-700 dark:text-gray-300">
+        <p><strong>🔍 What does SustainIQ do?</strong><br>
+        SustainIQ develops cutting-edge sustainability tools and digital solutions that enable organizations to measure, monitor, and improve their environmental and social performance through real-time insights and intelligent frameworks.</p>
+
+        <p><strong>🧠 Who is behind this?</strong><br>
+        This platform was founded by a sustainability strategist with a background in data science and circular systems, passionate about combining innovation, research, and automation for lasting climate impact.</p>
+
+        <p><strong>📦 Can I use these tools?</strong><br>
+        Absolutely. Many of the tools are in beta and open for community testing, while others will be launched as shareable templates or subscription-based services with full documentation.</p>
       </div>
     </div>
   </section>
@@ -123,12 +100,6 @@
   <script>
     document.getElementById('toggle-mode').addEventListener('click', () => {
       document.documentElement.classList.toggle('dark');
-    });
-
-    document.querySelectorAll('.accordion').forEach(item => {
-      item.addEventListener('click', () => {
-        item.classList.toggle('accordion-open');
-      });
     });
   </script>
 </body>
