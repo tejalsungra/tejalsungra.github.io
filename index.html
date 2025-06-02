@@ -39,6 +39,14 @@
       0% { transform: scale(1); }
       100% { transform: scale(1.2); }
     }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .accordion-open .accordion-content {
+      max-height: 300px;
+    }
   </style>
 </head>
 <body class="bg-background dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans">
@@ -76,15 +84,25 @@
   <section class="px-4 sm:px-6 py-12 md:py-20 bg-secondary dark:bg-gray-800">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-2xl sm:text-3xl font-bold mb-8">About SustainIQ</h2>
-      <div class="text-left space-y-6 text-gray-700 dark:text-gray-300">
-        <p><strong>🔍 What does SustainIQ do?</strong><br>
-        SustainIQ develops cutting-edge sustainability tools and digital solutions that enable organizations to measure, monitor, and improve their environmental and social performance through real-time insights and intelligent frameworks.</p>
-
-        <p><strong>🧠 Who is behind this?</strong><br>
-        This platform was founded by a sustainability strategist with a background in data science and circular systems, passionate about combining innovation, research, and automation for lasting climate impact.</p>
-
-        <p><strong>📦 Can I use these tools?</strong><br>
-        Absolutely. Many of the tools are in beta and open for community testing, while others will be launched as shareable templates or subscription-based services with full documentation.</p>
+      <div class="text-left space-y-4 text-gray-700 dark:text-gray-300">
+        <div class="cursor-pointer border-b border-gray-300 dark:border-gray-700 py-3 accordion">
+          <h3 class="text-lg font-semibold">🔍 What does SustainIQ do?</h3>
+          <div class="accordion-content pt-2">
+            SustainIQ develops cutting-edge sustainability tools and digital solutions that enable organizations to measure, monitor, and improve their environmental and social performance through real-time insights and intelligent frameworks.
+          </div>
+        </div>
+        <div class="cursor-pointer border-b border-gray-300 dark:border-gray-700 py-3 accordion">
+          <h3 class="text-lg font-semibold">🧠 Who is behind this?</h3>
+          <div class="accordion-content pt-2">
+            This platform was founded by a sustainability strategist with a background in data science and circular systems, passionate about combining innovation, research, and automation for lasting climate impact.
+          </div>
+        </div>
+        <div class="cursor-pointer border-b border-gray-300 dark:border-gray-700 py-3 accordion">
+          <h3 class="text-lg font-semibold">📦 Can I use these tools?</h3>
+          <div class="accordion-content pt-2">
+            Absolutely. Many of the tools are in beta and open for community testing, while others will be launched as shareable templates or subscription-based services with full documentation.
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -100,6 +118,12 @@
   <script>
     document.getElementById('toggle-mode').addEventListener('click', () => {
       document.documentElement.classList.toggle('dark');
+    });
+
+    document.querySelectorAll('.accordion').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('accordion-open');
+      });
     });
   </script>
 </body>
