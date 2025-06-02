@@ -35,25 +35,18 @@
       to { opacity: 1; transform: translateY(0); }
       from { opacity: 0; transform: translateY(20px); }
     }
-      @keyframes slowFade {
-      0% { opacity: 1; }
-      98% { opacity: 1; }
-      99% { opacity: 0; }
-      100% { opacity: 1; }
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.2); }
     }
   </style>
 </head>
 <body class="bg-background dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans">
   <!-- Navbar -->
   <nav class="flex justify-between items-center px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
-    <div class="text-2xl font-bold text-white dark:text-white">
-      Sustain<span class="text-white">I</span><span class="text-green-500 relative inline-block">
-        <svg class="w-6 h-6 inline-block" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="5" fill="none"/>
-        </svg>
-        <span class="absolute top-0 left-0 text-green-500 font-bold text-xl">Q</span>
-      </span>
-    </div>
+    <a href="index.html" class="text-2xl font-bold text-primary dark:text-white">
+      Sustain<span class="text-white dark:text-primary">I</span><span class="text-green-500">Q</span>
+    </a>
     <ul class="flex gap-6 text-sm font-medium">
       <li><a href="index.html" class="hover:text-accent">Home</a></li>
       <li><a href="tools.html" class="hover:text-accent">Tools</a></li>
@@ -67,7 +60,7 @@
 
   <!-- Hero Section with Video Background -->
   <section class="relative w-full h-[90vh] overflow-hidden">
-    <video autoplay muted loop playsinline class="absolute w-full h-full object-cover z-0" style="animation: slowFade 60s linear infinite;">
+    <video autoplay muted loop playsinline class="absolute w-full h-full object-cover z-0" style="animation: slowZoom 90s ease-in-out infinite alternate;">
       <source src="hero.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -76,6 +69,25 @@
       <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">You don’t just need sustainability — you need strategy that scales.</h1>
       <p class="text-xl md:text-2xl mb-6 animate-fade-in delay-150">Let’s build sustainability you can track, prove, and profit from.</p>
       <a href="tools.html" class="bg-white text-primary font-semibold px-6 py-3 rounded shadow hover:bg-accent hover:text-white transition">Explore My Tools</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="px-6 py-12 md:py-20 bg-secondary dark:bg-gray-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">About SustainIQ</h2>
+      <p class="text-gray-700 dark:text-gray-300 mb-8">SustainIQ is a personal portfolio and innovation lab where sustainability meets strategy and technology. From climate data tools to AI-driven reporting systems, this site highlights the journey, tools, and ideas behind circular impact at scale.</p>
+
+      <div class="text-left space-y-4">
+        <h3 class="text-xl font-semibold">🔍 What does SustainIQ do?</h3>
+        <p class="text-gray-700 dark:text-gray-300">We build prototypes, dashboards, and frameworks that make sustainability measurable and strategic — with data and design at the core.</p>
+
+        <h3 class="text-xl font-semibold">🧠 Who is behind this?</h3>
+        <p class="text-gray-700 dark:text-gray-300">This is the personal platform of a sustainability analyst and creative technologist — blending academic depth with real-world application.</p>
+
+        <h3 class="text-xl font-semibold">📦 Can I use these tools?</h3>
+        <p class="text-gray-700 dark:text-gray-300">Yes! Many tools will be open source or available as premium templates soon.</p>
+      </div>
     </div>
   </section>
 
@@ -101,3 +113,4 @@
   </script>
 </body>
 </html>
+
