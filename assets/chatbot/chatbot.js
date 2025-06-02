@@ -1,79 +1,74 @@
-const widget = document.getElementById('sustainbot-widget');
+document.addEventListener("DOMContentLoaded", () => {
+  // Create chatbot bubble
+  const bubble = document.createElement("div");
+  bubble.id = "chatbot-bubble";
+  bubble.innerHTML = "💬";
+  document.body.appendChild(bubble);
 
-const chatHTML = `
-  <div id="sustainbot-container">
-    <div id="sustainbot-header">
-      <span>SustainBot 🤖</span>
-      <button id="minimize-btn">—</button>
+  // Create chat window
+  const chatWindow = document.createElement("div");
+  chatWindow.id = "chatbot-window";
+  chatWindow.innerHTML = `
+    <div class="chatbot-header">
+      <span>SustainBot</span>
+      <button id="minimize-chat">−</button>
     </div>
-    <div id="sustainbot-messages"></div>
-    <form id="sustainbot-form">
-      <input type="text" id="sustainbot-input" placeholder="Ask me about sustainability..." autocomplete="off" />
-      <button type="submit">➤</button>
+    <div class="chatbot-messages" id="chatbot-messages"></div>
+    <form id="chatbot-form">
+      <input type="text" id="chatbot-input" placeholder="Ask me anything..." autocomplete="off" required />
     </form>
-  </div>
-  <button id="sustainbot-toggle">💬</button>
-`;
+  `;
+  document.body.appendChild(chatWindow);
 
-widget.innerHTML = chatHTML;
+  // Auto open on load
+  chatWindow.style.display = "block";
 
-const messages = document.getElementById('sustainbot-messages');
-const form = document.getElementById('sustainbot-form');
-const input = document.getElementById('sustainbot-input');
-const toggle = document.getElementById('sustainbot-toggle');
-const container = document.getElementById('sustainbot-container');
-const minimize = document.getElementById('minimize-btn');
+  // Toggle visibility
+  bubble.addEventListener("click", () => {
+    chatWindow.style.display = chatWindow.style.display === "none" ? "block" : "none";
+  });
 
-let knowledgeBase = [];
+  document.getElementById("minimize-chat").addEventListener("click", () => {
+    chatWindow.style.display = "none";
+  });
 
-fetch('assets/chatbot/data.json')
-  .then(res => res.json())
-  .then(data => knowledgeBase = data);
+  // Chat functionality
+  const messages = document.getElementById("chatbot-messages");
+  const form = document.getElementById("chatbot-form");
+  const input = document.getElementById("chatbot-input");
 
-const matchAnswer = (query) => {
-  const cleanQuery = query.toLowerCase();
-  for (let item of knowledgeBase) {
-    for (let q of item.questions) {
-      if (cleanQuery.includes(q)) {
-        return item.answer;
-      }
-    }
+  // Load JSON responses
+  let responses = [];
+  fetch("assets/chatbot/data/responses.json")
+    .then((res) => res.json())
+    .then((data) => {
+      responses = data;
+    });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const userInput = input.value.trim();
+    if (!userInput) return;
+
+    appendMessage("user", userInput);
+    input.value = "";
+
+    // Match response
+    const found = responses.find((entry) =>
+      entry.keywords.some((kw) => userInput.toLowerCase().includes(kw))
+    );
+
+    const reply = found
+      ? found.response
+      : "Sorry, I don't have an answer for that yet. Please try another sustainability topic!";
+    setTimeout(() => appendMessage("bot", reply), 500);
+  });
+
+  function appendMessage(sender, text) {
+    const div = document.createElement("div");
+    div.className = `chat-msg ${sender}`;
+    div.textContent = text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
   }
-  return "I'm still learning. Try asking something else about sustainability 🌱.";
-};
-
-const appendMessage = (text, sender) => {
-  const div = document.createElement('div');
-  div.className = `sustainbot-msg ${sender}`;
-  div.textContent = text;
-  messages.appendChild(div);
-  messages.scrollTop = messages.scrollHeight;
-};
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const userMsg = input.value.trim();
-  if (!userMsg) return;
-
-  appendMessage(userMsg, 'user');
-  const botReply = matchAnswer(userMsg);
-  appendMessage(botReply, 'bot');
-
-  input.value = '';
 });
-
-toggle.addEventListener('click', () => {
-  container.style.display = 'block';
-  toggle.style.display = 'none';
-});
-
-minimize.addEventListener('click', () => {
-  container.style.display = 'none';
-  toggle.style.display = 'block';
-});
-
-// Auto-show on load after 2s
-setTimeout(() => {
-  container.style.display = 'block';
-  toggle.style.display = 'none';
-}, 2000);
