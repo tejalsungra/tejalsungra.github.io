@@ -13,7 +13,7 @@
           colors: {
             primary: '#004643',
             secondary: '#FAF4F0',
-            accent: '#00C281',
+            accent: '#11875d',
             background: '#FFFFFF',
             darkbg: '#1F1F1F',
           },
@@ -29,11 +29,11 @@
   </style>
 </head>
 <body class="bg-background dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans">
-  <nav class="flex flex-wrap justify-between items-center px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
-    <a href="index.html" class="text-2xl font-bold text-primary dark:text-white">
-      Sustain<span class="text-green-500">IQ</span>
+  <nav class="flex flex-wrap justify-between items-center px-4 sm:px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
+    <a href="index.html" class="text-xl sm:text-2xl font-bold text-primary dark:text-white">
+      Sustain<span class="text-accent">IQ</span>
     </a>
-    <ul class="flex flex-wrap gap-4 md:gap-6 text-sm font-medium mt-2 md:mt-0">
+    <ul class="flex flex-wrap justify-center gap-3 sm:gap-5 text-sm font-medium mt-3 sm:mt-0">
       <li><a href="index.html" class="hover:text-accent">Home</a></li>
       <li><a href="tools.html" class="hover:text-accent">Tools</a></li>
       <li><a href="products.html" class="hover:text-accent">Products</a></li>
@@ -43,43 +43,45 @@
     </ul>
   </nav>
 
-  <header class="text-center py-12 px-4">
-    <h1 class="text-4xl font-bold text-primary dark:text-green-400 mb-4">Explore My Sustainability Tools</h1>
-    <p class="text-lg text-gray-700 dark:text-gray-300">Built for impact. Designed for action.</p>
+  <header class="text-center py-10 px-4 sm:px-6">
+    <h1 class="text-3xl sm:text-4xl font-bold text-primary dark:text-accent mb-4">Explore My Sustainability Tools</h1>
+    <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300">Built for impact. Designed for action.</p>
   </header>
 
-  <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-6 md:p-12">
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-6 md:px-12 pb-10">
     <!-- Tool Card -->
     <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
       <div class="p-6">
-        <h2 class="text-xl font-bold text-primary mb-2">Scope 3 Estimator</h2>
-        <p class="text-gray-700 dark:text-gray-300">Estimate your indirect emissions with a simple, transparent workflow using latest emission factors.</p>
-        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline">Launch Tool →</a>
+        <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Scope 3 Estimator</h2>
+        <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300">Estimate your indirect emissions with a simple, transparent workflow using latest emission factors.</p>
+        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline text-sm sm:text-base">Launch Tool →</a>
       </div>
     </div>
 
     <!-- Tool Card -->
     <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
       <div class="p-6">
-        <h2 class="text-xl font-bold text-primary mb-2">Circularity Dashboard</h2>
-        <p class="text-gray-700 dark:text-gray-300">Visualize product material flows and track circular KPIs to boost resource efficiency.</p>
-        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline">Open Dashboard →</a>
+        <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Circularity Dashboard</h2>
+        <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300">Visualize product material flows and track circular KPIs to boost resource efficiency.</p>
+        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline text-sm sm:text-base">Open Dashboard →</a>
       </div>
     </div>
 
     <!-- Tool Card -->
     <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
       <div class="p-6">
-        <h2 class="text-xl font-bold text-primary mb-2">CSRD Navigator</h2>
-        <p class="text-gray-700 dark:text-gray-300">Simplify your EU Corporate Sustainability Reporting Directive journey with step-by-step guidance.</p>
-        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline">Start Navigating →</a>
+        <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">CSRD Navigator</h2>
+        <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300">Simplify your EU Corporate Sustainability Reporting Directive journey with step-by-step guidance.</p>
+        <a href="#" class="inline-block mt-4 text-accent font-semibold hover:underline text-sm sm:text-base">Start Navigating →</a>
       </div>
     </div>
   </section>
 
-  <footer class="bg-gray-100 dark:bg-gray-900 text-center py-6 text-sm text-gray-600 dark:text-gray-300 mt-12">
-    <p>&copy; 2025 SustainIQ &mdash; All rights reserved.</p>
-    <p>Email: example@example.com | <a href="https://linkedin.com/in/tejalsungra" class="text-blue-500">LinkedIn</a></p>
+  <footer class="bg-gray-100 dark:bg-gray-900 text-center py-6 text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-12">
+    <div class="flex flex-col items-center gap-2">
+      <p>&copy; 2025 SustainIQ &mdash; All rights reserved.</p>
+      <p>Email: example@example.com | <a href="https://linkedin.com/in/tejalsungra" class="text-blue-500">LinkedIn</a></p>
+    </div>
   </footer>
 </body>
 </html>
