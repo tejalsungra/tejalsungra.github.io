@@ -1,63 +1,79 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const widget = document.getElementById('sustainbot-widget');
-  widget.innerHTML = `
-    <div id="chat-toggle" style="position: fixed; bottom: 20px; right: 20px; background: #007554; color: white; padding: 16px 20px; border-radius: 50px; cursor: pointer; z-index: 9999; font-weight: bold; font-size: 20px;">
-      💬
+const widget = document.getElementById('sustainbot-widget');
+
+const chatHTML = `
+  <div id="sustainbot-container">
+    <div id="sustainbot-header">
+      <span>SustainBot 🤖</span>
+      <button id="minimize-btn">—</button>
     </div>
-    <div id="chatbox" style="display:none; position:fixed; bottom:80px; right:20px; width:320px; max-height:460px; background:white; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.25); z-index: 9999; overflow: hidden; display: flex; flex-direction: column;">
-      <div style="background:#004643; color:white; padding:10px; font-weight:bold; display:flex; justify-content:space-between; align-items:center;">
-        SustainBot
-        <span id="minimize-chat" style="cursor:pointer; font-size:18px;">✖</span>
-      </div>
-      <div id="chat-content" style="padding:10px; flex-grow:1; overflow-y:auto; font-size:14px; color:#333;"></div>
-      <div style="padding:10px; display:flex; gap:5px;">
-        <input type="text" id="chat-input" style="flex:1; padding:6px; border:1px solid #ccc; border-radius:4px;" placeholder="Ask something..." />
-        <button id="send-btn" style="padding:6px 10px; background:#007554; color:white; border:none; border-radius:4px;">Send</button>
-      </div>
-    </div>
-  `;
+    <div id="sustainbot-messages"></div>
+    <form id="sustainbot-form">
+      <input type="text" id="sustainbot-input" placeholder="Ask me about sustainability..." autocomplete="off" />
+      <button type="submit">➤</button>
+    </form>
+  </div>
+  <button id="sustainbot-toggle">💬</button>
+`;
 
-  const toggle = document.getElementById('chat-toggle');
-  const chatbox = document.getElementById('chatbox');
-  const input = document.getElementById('chat-input');
-  const sendBtn = document.getElementById('send-btn');
-  const content = document.getElementById('chat-content');
-  const minimize = document.getElementById('minimize-chat');
+widget.innerHTML = chatHTML;
 
-  // Toggle visibility on button click
-  toggle.addEventListener('click', () => {
-    chatbox.style.display = 'flex';
-    toggle.style.display = 'none';
-  });
+const messages = document.getElementById('sustainbot-messages');
+const form = document.getElementById('sustainbot-form');
+const input = document.getElementById('sustainbot-input');
+const toggle = document.getElementById('sustainbot-toggle');
+const container = document.getElementById('sustainbot-container');
+const minimize = document.getElementById('minimize-btn');
 
-  minimize.addEventListener('click', () => {
-    chatbox.style.display = 'none';
-    toggle.style.display = 'block';
-  });
+let knowledgeBase = [];
 
-  // Auto-open after 5 seconds
-  setTimeout(() => {
-    chatbox.style.display = 'flex';
-    toggle.style.display = 'none';
-  }, 5000);
+fetch('assets/chatbot/data.json')
+  .then(res => res.json())
+  .then(data => knowledgeBase = data);
 
-  const sendMessage = () => {
-    const msg = input.value.trim();
-    if (msg) {
-      content.innerHTML += `<div><strong>You:</strong> ${msg}</div>`;
-      content.innerHTML += `<div><strong>Bot:</strong> This is a demo response.</div>`;
-      input.value = '';
-      content.scrollTop = content.scrollHeight;
+const matchAnswer = (query) => {
+  const cleanQuery = query.toLowerCase();
+  for (let item of knowledgeBase) {
+    for (let q of item.questions) {
+      if (cleanQuery.includes(q)) {
+        return item.answer;
+      }
     }
-  };
+  }
+  return "I'm still learning. Try asking something else about sustainability 🌱.";
+};
 
-  // Send on click
-  sendBtn.addEventListener('click', sendMessage);
+const appendMessage = (text, sender) => {
+  const div = document.createElement('div');
+  div.className = `sustainbot-msg ${sender}`;
+  div.textContent = text;
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+};
 
-  // Send on Enter key
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      sendMessage();
-    }
-  });
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const userMsg = input.value.trim();
+  if (!userMsg) return;
+
+  appendMessage(userMsg, 'user');
+  const botReply = matchAnswer(userMsg);
+  appendMessage(botReply, 'bot');
+
+  input.value = '';
 });
+
+toggle.addEventListener('click', () => {
+  container.style.display = 'block';
+  toggle.style.display = 'none';
+});
+
+minimize.addEventListener('click', () => {
+  container.style.display = 'none';
+  toggle.style.display = 'block';
+});
+
+// Auto-show on load after 2s
+setTimeout(() => {
+  container.style.display = 'block';
+  toggle.style.display = 'none';
+}, 2000);
