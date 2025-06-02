@@ -118,8 +118,11 @@
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     };
 
+
     document.getElementById('toggle-mode')?.addEventListener('click', toggleDarkMode);
-    document.getElementById('toggle-mode-desktop')?.addEventListener('click', toggleDarkMode);
-  </script>
+    document.getElementById('toggle-mode-mobile')?.addEventListener('click', toggleDarkMode);
+    document.getElementById('mobile-menu-button')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });  </script>
 </body>
 </html>
